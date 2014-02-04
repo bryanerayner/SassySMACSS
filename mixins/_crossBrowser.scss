@@ -1,0 +1,31 @@
+
+/**
+Prefix - Prefixes a property with webkit, moz, or o.
+
+Usage:
+
+@include prefix(animation, slide 1s)
+
+outputs
+-webkit-animation: slide 1s;
+-moz-animation: slide 1s;
+-o-animation: slide 1s;
+animation: slide 1s;
+
+Want to forget opera or use a different set of prefixes?
+
+@include prefix(animation, slide 1s, (-webkit-,-ms-))
+outputs
+-webkit-animation: slide 1s;
+-ms-animation: slide 1s;
+animation: slide 1s;
+
+*/
+@mixin prefix($property, $value, $prefixes:(-webkit-,-moz-,-o-,''))
+{
+	@each $prefix in $prefixes
+	{
+		#{$prefix}#{$property}: #{$value};
+	}
+	#{$property}: #{$value};
+}
