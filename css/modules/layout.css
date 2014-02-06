@@ -1,0 +1,85 @@
+/*
+Syntax error: Invalid CSS after "		@each": expected "$", was "($mediaQuery in..."
+        on line 61 of scss/modules/../mixins/_grid.scss
+        from line 2 of scss/modules/layout.scss
+
+56: 
+57: @mixin create_grid($columnWidth:12, $mediaQueries:("lg","med","sm"), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
+58: {
+59: 	@for $i from 1 through $columnWidth
+60: 	{
+61: 		@each($mediaQuery in $mediaQueries)
+62: 		{
+63: 			
+64: 			@include grid_cell-mode($i, $columnWidth, $mediaQuery, $cellClassName, $columnClassName);
+65: 		}		
+66: 	}
+
+Backtrace:
+scss/modules/../mixins/_grid.scss:61
+scss/modules/layout.scss:2
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1306:in `expected'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1242:in `expected'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1237:in `tok!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:288:in `each_directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:217:in `special_directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:189:in `directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:655:in `block_child'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:644:in `block_contents'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:636:in `block'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:284:in `for_directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:217:in `special_directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:189:in `directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:655:in `block_child'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:644:in `block_contents'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:636:in `block'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:229:in `mixin_directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:217:in `special_directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:189:in `directive'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:654:in `block_child'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:647:in `block_contents'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:117:in `stylesheet'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:42:in `parse'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:402:in `_to_tree'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:306:in `to_tree'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:294:in `block in visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:88:in `block in with_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:88:in `with_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:293:in `visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:174:in `with_environment'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:161:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:181:in `visit_root'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:152:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:275:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:347:in `update_stylesheet'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:191:in `block in update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:188:in `each'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:188:in `update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:276:in `block in watch'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:236:in `call'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:236:in `on_change'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:271:in `block in initialize_adapter'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapters/polling.rb:48:in `call'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapter.rb:289:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"		@each\": expected \"$\", was \"($mediaQuery in...\"\A         on line 61 of scss/modules/../mixins/_grid.scss\A         from line 2 of scss/modules/layout.scss\A \A 56: \A 57: @mixin create_grid($columnWidth:12, $mediaQueries:(\"lg\",\"med\",\"sm\"), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)\A 58: {\A 59: 	@for $i from 1 through $columnWidth\A 60: 	{\A 61: 		@each($mediaQuery in $mediaQueries)\A 62: 		{\A 63: 			\A 64: 			@include grid_cell-mode($i, $columnWidth, $mediaQuery, $cellClassName, $columnClassName);\A 65: 		}		\A 66: 	}"; }

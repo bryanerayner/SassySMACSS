@@ -1,0 +1,117 @@
+@import "../mixins/layout";
+@import "../mixins/grid";
+
+
+$l-constrained--max-width:1024px !default;
+$l-constrained-wider--max-width:1200px !default;
+
+$mq-screen--large:1104px !default;
+$mq-screen--medium:640px !default;
+$mq-screen--small:480px !default;
+
+.l_left
+	{
+		float:left;
+	}
+
+.l_right
+	{
+		float:right;
+	}
+
+.l_constrained
+	{
+		max-width:$l-constrained--max-width;
+		width:100%; margin: 0 auto;
+
+		@extend %clearfix;
+		&.l_constrained-wider
+			{
+				max-width: $l-constrained-wider--max-width;
+			}
+	}
+
+.l_topBar
+	{
+		position:relative;
+		top:0; width:100%;
+
+	&.is-pinned
+		{
+			position: fixed;
+	}
+}
+
+.l_bottomBar
+	{
+		border:1px solid; padding:18px 30px 0;
+		width:100%;
+
+}
+
+.l_title
+{
+	@extend %clearfix;
+}
+
+.l_colourblock
+{
+	width:100%; @extend %clearfix;
+}
+
+
+
+.l_grid_container
+	{
+		width:100%;
+		@extend %clearfix;
+
+	[class*="l_grid_cell"]
+		{
+			float:left;
+
+		&:last-child
+			{
+				float:right;
+
+		}
+
+		&:last-child.l_grid_last
+			{
+				float:left;
+		}
+
+	}
+
+	.l_grid_cell-1
+		{
+			width:100%;
+		
+	}
+
+	.l_grid_cell-3
+		{
+			width:33.33%;
+		
+	}	
+
+	.l_grid_cell-5
+		{
+			width:20%;
+
+	}
+
+
+	
+}
+
+.l_relative
+	{
+		position: relative;
+}
+
+.l_absoluteCenter
+	{
+		margin:auto; position:absolute;
+		left:0;top:0;right:0;bottom:0;
+}

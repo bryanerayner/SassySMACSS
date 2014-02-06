@@ -1,0 +1,42 @@
+$defaults-browser_support-lowest: ie6 !default;
+
+
+
+@if ($defaults-browser_support-lowest == IEforMac)
+{
+	%clearfix:after {
+	     visibility: hidden;
+	     display: block;
+	     font-size: 0;
+	     content: " ";
+	     clear: both;
+	     height: 0;
+	     }
+	%clearfix { display: inline-block; }
+	/* start commented backslash hack \*/
+	* html %clearfix { height: 1%; }
+	%clearfix { display: block; }
+	/* close commented backslash hack */
+}
+@else if($defaults-browser_support-lowest == ie6 or $defaults-browser_support-lowest == ie7)
+{
+	%clearfix:before,
+	%clearfix:after {
+	    content: "";
+	    display: table;
+	} 
+	%clearfix:after {
+	    clear: both;
+	}
+	%clearfix {
+	    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+	}
+}
+@else
+{
+	%clearfix:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+}

@@ -1,0 +1,21 @@
+$defaults-media_queries-sm: 480px !default;
+$defaults-media_queries-med: 720px !default;
+$defaults-media_queries-lg: 1024px !default;
+
+
+
+@function get_mediaQuery($name)
+{
+	@if ($name == "sm")
+	{
+		return $defaults-media_queries-sm;
+	}
+	@if ($name == "med")
+	{
+		return $defaults-media_queries-med;
+	}
+	@if ($name == "lg")
+	{
+		return $defaults-media_queries-lg;
+	}
+}
