@@ -34,6 +34,8 @@ $mq-screen--small:480px !default;
 			}
 	}
 
+@include create_grid();
+
 .l_topBar
 	{
 		position:relative;
@@ -63,7 +65,7 @@ $mq-screen--small:480px !default;
 }
 
 
-@include create_grid(12, true);
+
 
 
 
