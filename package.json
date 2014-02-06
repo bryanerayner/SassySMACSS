@@ -1,0 +1,32 @@
+{
+  "name": "SassySMACSS",
+  "version": "0.0.1",
+  "description": "Commonly used modules, written in SASS following the SMACSS style of naming. Not intended to be a framework, but a collection of commonly needed SASS partials and modules.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bryanerayner@github.com/bryanerayner/SassySMACSS.git"
+  },
+  "keywords": [
+    "SMACSS",
+    "Grid",
+    "Layout",
+    "SASS",
+    "Starter"
+  ],
+  "author": "Bryan Rayner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryanerayner/SassySMACSS/issues"
+  },
+  "homepage": "https://github.com/bryanerayner/SassySMACSS",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-sass": "~0.7.2",
+    "grunt-newer": "~0.6.1"
+  }
+}

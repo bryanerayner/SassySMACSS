@@ -6,7 +6,7 @@
     "Bryan Rayner <bryanerayner@gmail.com>"
   ],
   "description": "Commonly used modules, written in SASS following the SMACSS style of naming. Not intended to be a framework, but a collection of commonly needed SASS partials and modules.",
-  "main": "css/sassySmacss.css",
+  "main": "sassySmacss.scss",
   "keywords": [
     "SMACSS",
     "Grid",
@@ -22,13 +22,14 @@
     "test",
     "tests"
   ],
-  "cwd":"scss/",
   "ignore":[
   "css/",
   "*.css",
   "node_modules",
   "Gruntfile.js",
-  ".DS_Store"
+  ".DS_Store",
+  ".gitignore",
+  ".git/"
   ],
   "directory":"scss",
   "repository":{

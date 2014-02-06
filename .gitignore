@@ -1,6 +1,7 @@
 ## SCSS
 
 .scss-cache/
+node_modules/
 
 #################
 ## Eclipse
