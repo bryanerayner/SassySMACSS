@@ -1,6 +1,6 @@
 {
   "name": "SassySMACSS",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "homepage": "https://github.com/bryanerayner/SassySMACSS",
   "authors": [
     "Bryan Rayner <bryanerayner@gmail.com>"
@@ -29,7 +29,10 @@
   "Gruntfile.js",
   ".DS_Store",
   ".gitignore",
-  ".git/"
+  ".git/",
+  "package.json",
+  ".sass-cache/",
+  "bower.json"
   ],
   "repository":{
     "type":"git",
