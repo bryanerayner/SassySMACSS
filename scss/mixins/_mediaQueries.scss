@@ -8,14 +8,18 @@ $defaults-media_queries-lg: 1024px !default;
 {
 	@if ($name == "sm")
 	{
-		return $defaults-media_queries-sm;
+		@return $defaults-media_queries-sm;
 	}
 	@if ($name == "med")
 	{
-		return $defaults-media_queries-med;
+		@return $defaults-media_queries-med;
 	}
 	@if ($name == "lg")
 	{
-		return $defaults-media_queries-lg;
+		@return $defaults-media_queries-lg;
+	}
+	@else
+	{
+		@return null;
 	}
 }

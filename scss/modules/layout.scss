@@ -2,6 +2,9 @@
 @import "../mixins/grid";
 
 
+$defaults-grid_cell-cellClassName: l_grid_cell !default;
+$defaults-grid_cell-columnClassName: l_grid_container !default;
+
 $l-constrained--max-width:1024px !default;
 $l-constrained-wider--max-width:1200px !default;
 
@@ -60,50 +63,9 @@ $mq-screen--small:480px !default;
 }
 
 
-
-.l_grid_container
-	{
-		width:100%;
-		@extend %clearfix;
-
-	[class*="l_grid_cell"]
-		{
-			float:left;
-
-		&:last-child
-			{
-				float:right;
-
-		}
-
-		&:last-child.l_grid_last
-			{
-				float:left;
-		}
-
-	}
-
-	.l_grid_cell-1
-		{
-			width:100%;
-		
-	}
-
-	.l_grid_cell-3
-		{
-			width:33.33%;
-		
-	}	
-
-	.l_grid_cell-5
-		{
-			width:20%;
-
-	}
+@include create_grid(12, true);
 
 
-	
-}
 
 .l_relative
 	{

@@ -42,3 +42,15 @@ This project is open to contributions. Just make sure the style matches the foll
 
 Submit a pull request if you have a useful mixin which can be simply included in a project.
 
+
+
+## Compilation
+
+To compile this project, please use sourcemaps and the sass-media_query_combiner gem. 
+
+https://github.com/aaronjensen/sass-media_query_combiner
+
+To use this gem, include this flag when compiling SASS on the command line:
+
+	sass --watch -r sass-media_query_combiner
+

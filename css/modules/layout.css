@@ -1,85 +1,137 @@
-/*
-Syntax error: Invalid CSS after "		@each": expected "$", was "($mediaQuery in..."
-        on line 61 of scss/modules/../mixins/_grid.scss
-        from line 2 of scss/modules/layout.scss
+.l_constrained:before, .l_title:before, .l_colourblock:before,
+.l_constrained:after,
+.l_title:after,
+.l_colourblock:after {
+  content: "";
+  display: table; }
 
-56: 
-57: @mixin create_grid($columnWidth:12, $mediaQueries:("lg","med","sm"), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
-58: {
-59: 	@for $i from 1 through $columnWidth
-60: 	{
-61: 		@each($mediaQuery in $mediaQueries)
-62: 		{
-63: 			// Change that is much more better.
-64: 			@include grid_cell-mode($i, $columnWidth, $mediaQuery, $cellClassName, $columnClassName);
-65: 		}		
-66: 	}
+.l_constrained:after, .l_title:after, .l_colourblock:after {
+  clear: both; }
 
-Backtrace:
-scss/modules/../mixins/_grid.scss:61
-scss/modules/layout.scss:2
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1306:in `expected'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1242:in `expected'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1237:in `tok!'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:288:in `each_directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:217:in `special_directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:189:in `directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:655:in `block_child'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:644:in `block_contents'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:636:in `block'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:284:in `for_directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:217:in `special_directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:189:in `directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:655:in `block_child'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:644:in `block_contents'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:636:in `block'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:229:in `mixin_directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:217:in `special_directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:189:in `directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:654:in `block_child'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:647:in `block_contents'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:117:in `stylesheet'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:402:in `_to_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:306:in `to_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:294:in `block in visit_import'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:293:in `visit_import'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `block in visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:174:in `with_environment'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:161:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:181:in `visit_root'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:152:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:275:in `render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:347:in `update_stylesheet'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:191:in `block in update_stylesheets'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:188:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:188:in `update_stylesheets'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/plugin/compiler.rb:276:in `block in watch'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:236:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:236:in `on_change'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:271:in `block in initialize_adapter'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapters/polling.rb:48:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapter.rb:289:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"		@each\": expected \"$\", was \"($mediaQuery in...\"\A         on line 61 of scss/modules/../mixins/_grid.scss\A         from line 2 of scss/modules/layout.scss\A \A 56: \A 57: @mixin create_grid($columnWidth:12, $mediaQueries:(\"lg\",\"med\",\"sm\"), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)\A 58: {\A 59: 	@for $i from 1 through $columnWidth\A 60: 	{\A 61: 		@each($mediaQuery in $mediaQueries)\A 62: 		{\A 63: 			// Change that is much more better.\A 64: 			@include grid_cell-mode($i, $columnWidth, $mediaQuery, $cellClassName, $columnClassName);\A 65: 		}		\A 66: 	}"; }
+.l_constrained, .l_title, .l_colourblock {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */ }
+
+.l_left {
+  float: left; }
+
+.l_right {
+  float: right; }
+
+.l_constrained {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto; }
+  .l_constrained.l_constrained-wider {
+    max-width: 1200px; }
+
+.l_topBar {
+  position: relative;
+  top: 0;
+  width: 100%; }
+  .l_topBar.is-pinned {
+    position: fixed; }
+
+.l_bottomBar {
+  border: 1px solid;
+  padding: 18px 30px 0;
+  width: 100%; }
+
+.l_colourblock {
+  width: 100%; }
+
+.l_grid_container-12 > .l_grid_cell-sm-1 {
+  width: 8.33333%; }
+.l_grid_container-12 > .l_grid_cell-sm-2 {
+  width: 16.66667%; }
+.l_grid_container-12 > .l_grid_cell-sm-3 {
+  width: 25%; }
+.l_grid_container-12 > .l_grid_cell-sm-4 {
+  width: 33.33333%; }
+.l_grid_container-12 > .l_grid_cell-sm-5 {
+  width: 41.66667%; }
+.l_grid_container-12 > .l_grid_cell-sm-6 {
+  width: 50%; }
+.l_grid_container-12 > .l_grid_cell-sm-7 {
+  width: 58.33333%; }
+.l_grid_container-12 > .l_grid_cell-sm-8 {
+  width: 66.66667%; }
+.l_grid_container-12 > .l_grid_cell-sm-9 {
+  width: 75%; }
+.l_grid_container-12 > .l_grid_cell-sm-10 {
+  width: 83.33333%; }
+.l_grid_container-12 > .l_grid_cell-sm-11 {
+  width: 91.66667%; }
+.l_grid_container-12 > .l_grid_cell-sm-12 {
+  width: 100%; }
+.l_grid_container-12 {
+  width: 100%; }
+  .l_grid_container-12 > [class*=l_grid_cell] {
+    float: left; }
+  .l_grid_container-12 > [class*=l_grid_cell]:last-child {
+    float: right; }
+  .l_grid_container-12 > .l_grid_cell-last {
+    float: left; }
+
+.l_relative {
+  position: relative; }
+
+.l_absoluteCenter {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0; }
+
+@media (max-width: 720px) {
+  .l_grid_container-12 > .l_grid_cell-med-1 {
+    width: 8.33333%; } 
+  .l_grid_container-12 > .l_grid_cell-med-2 {
+    width: 16.66667%; } 
+  .l_grid_container-12 > .l_grid_cell-med-3 {
+    width: 25%; } 
+  .l_grid_container-12 > .l_grid_cell-med-4 {
+    width: 33.33333%; } 
+  .l_grid_container-12 > .l_grid_cell-med-5 {
+    width: 41.66667%; } 
+  .l_grid_container-12 > .l_grid_cell-med-6 {
+    width: 50%; } 
+  .l_grid_container-12 > .l_grid_cell-med-7 {
+    width: 58.33333%; } 
+  .l_grid_container-12 > .l_grid_cell-med-8 {
+    width: 66.66667%; } 
+  .l_grid_container-12 > .l_grid_cell-med-9 {
+    width: 75%; } 
+  .l_grid_container-12 > .l_grid_cell-med-10 {
+    width: 83.33333%; } 
+  .l_grid_container-12 > .l_grid_cell-med-11 {
+    width: 91.66667%; } 
+  .l_grid_container-12 > .l_grid_cell-med-12 {
+    width: 100%; } }
+
+@media (max-width: 1024px) {
+  .l_grid_container-12 > .l_grid_cell-lg-1 {
+    width: 8.33333%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-2 {
+    width: 16.66667%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-3 {
+    width: 25%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-4 {
+    width: 33.33333%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-5 {
+    width: 41.66667%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-6 {
+    width: 50%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-7 {
+    width: 58.33333%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-8 {
+    width: 66.66667%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-9 {
+    width: 75%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-10 {
+    width: 83.33333%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-11 {
+    width: 91.66667%; } 
+  .l_grid_container-12 > .l_grid_cell-lg-12 {
+    width: 100%; } }
