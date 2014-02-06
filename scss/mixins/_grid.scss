@@ -60,7 +60,7 @@ $defaults-media_queries-lg: 1024px !default;
 	{
 		@each($mediaQuery in $mediaQueries)
 		{
-			// Change
+			// Change that is much more better.
 			@include grid_cell-mode($i, $columnWidth, $mediaQuery, $cellClassName, $columnClassName);
 		}		
 	}

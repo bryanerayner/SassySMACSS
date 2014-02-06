@@ -10,7 +10,7 @@ Syntax error: Invalid CSS after "		@each": expected "$", was "($mediaQuery in...
 60: 	{
 61: 		@each($mediaQuery in $mediaQueries)
 62: 		{
-63: 			// Change
+63: 			// Change that is much more better.
 64: 			@include grid_cell-mode($i, $columnWidth, $mediaQuery, $cellClassName, $columnClassName);
 65: 		}		
 66: 	}
@@ -82,4 +82,4 @@ C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapter.rb:289:i
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"		@each\": expected \"$\", was \"($mediaQuery in...\"\A         on line 61 of scss/modules/../mixins/_grid.scss\A         from line 2 of scss/modules/layout.scss\A \A 56: \A 57: @mixin create_grid($columnWidth:12, $mediaQueries:(\"lg\",\"med\",\"sm\"), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)\A 58: {\A 59: 	@for $i from 1 through $columnWidth\A 60: 	{\A 61: 		@each($mediaQuery in $mediaQueries)\A 62: 		{\A 63: 			// Change\A 64: 			@include grid_cell-mode($i, $columnWidth, $mediaQuery, $cellClassName, $columnClassName);\A 65: 		}		\A 66: 	}"; }
+  content: "Syntax error: Invalid CSS after \"		@each\": expected \"$\", was \"($mediaQuery in...\"\A         on line 61 of scss/modules/../mixins/_grid.scss\A         from line 2 of scss/modules/layout.scss\A \A 56: \A 57: @mixin create_grid($columnWidth:12, $mediaQueries:(\"lg\",\"med\",\"sm\"), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)\A 58: {\A 59: 	@for $i from 1 through $columnWidth\A 60: 	{\A 61: 		@each($mediaQuery in $mediaQueries)\A 62: 		{\A 63: 			// Change that is much more better.\A 64: 			@include grid_cell-mode($i, $columnWidth, $mediaQuery, $cellClassName, $columnClassName);\A 65: 		}		\A 66: 	}"; }
