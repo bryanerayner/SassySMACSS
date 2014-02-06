@@ -1,0 +1,29 @@
+@import "mixins/mediaQueries";
+
+
+$defaults-float: left !default;
+$defaults-float-opposite: right !default;
+
+
+$defaults-nav_item-float:$defaults-float !default;
+
+
+
+@mixin nav_item
+{
+	display:block; float:$defaults-nav_item-float; width:100%;
+
+	@include mediaQuery_aboveSm()
+	{
+		width:auto;
+	}
+
+}
+
+// Mixins to easily generate themes for these modules.
+@mixin theme_nav_item()
+{
+	.nav_item{
+		@content;
+	}
+}

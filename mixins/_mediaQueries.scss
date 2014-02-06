@@ -2,7 +2,10 @@ $defaults-media_queries-sm: 480px !default;
 $defaults-media_queries-med: 720px !default;
 $defaults-media_queries-lg: 1024px !default;
 
-
+@function get_mediaQueries()
+{
+	@return ("sm", "med", "lg");
+}
 
 @function get_mediaQuery($name)
 {
@@ -21,5 +24,18 @@ $defaults-media_queries-lg: 1024px !default;
 	@else
 	{
 		@return null;
+	}
+}
+
+
+@mixin mediaQuery_aboveSm()
+{
+	// For non small media queries, we'll be expanding to a normal width
+	@each $mediaQuery in get_mediaQueries()
+	{
+		@if ($mediaQuery != "sm")
+		{
+			@content;
+		}
 	}
 }

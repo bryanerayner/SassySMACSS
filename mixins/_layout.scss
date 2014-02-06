@@ -40,3 +40,20 @@ $defaults-browser_support-lowest: ie6 !default;
 	  clear: both;
 	}
 } 
+
+
+
+
+
+@function float_inverse($float)
+{
+	@if ($float == left)
+	{
+		@return right;
+	}
+	@if ($float == right)
+	{
+		@return left;
+	}
+}
+

@@ -1,0 +1,36 @@
+@import "mixins/layout";
+@import "mixins/mediaQueries";
+
+@import "nav_item";
+
+
+$defaults-float: left !default;
+
+
+$defaults-nav-float:$defaults-float !default;
+
+
+.nav
+{
+	float:$defaults-nav-float;
+	> .nav_item
+	{
+		@include nav_item();
+	}
+}
+
+// Mixins to easily generate themes for these modules.
+@mixin change_nav()
+{
+	.nav
+	{ @content;	}
+}
+
+@mixin change_nav__nav_item()
+{
+	.nav
+	{
+		> .nav_item
+		{ @content; }
+	}
+}

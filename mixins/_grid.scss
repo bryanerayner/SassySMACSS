@@ -1,10 +1,10 @@
 @import "mediaQueries";
+@import "layout";
 
 $defaults-grid_cell-cellClassName: l_grid_cell !default;
 $defaults-grid_cell-columnClassName: l_grid_container !default;
 
 $defaults-float: left !default;
-$defaults-float-opposite: right !default;
 
 // This mixin generates a cell, based on a column and contianer, in a SMACSS way. 
 // If $useColumnNumber is set to true, this mixin will generate a number as well
@@ -91,7 +91,7 @@ $defaults-float-opposite: right !default;
 	
 	.#{$columnClassName}#{$numberPrefix}
 	{
-		width:100%;
+		width:100%; @extend %clearfix;
 
 		> [class*=#{$cellClassName}]
 		{
@@ -99,7 +99,7 @@ $defaults-float-opposite: right !default;
 		}
 		> [class*=#{$cellClassName}]:last-child
 		{
-			float: $defaults-float-opposite;
+			float: float_inverse($defaults-float);
 		}
 		> .#{$cellClassName}-last
 		{
