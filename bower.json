@@ -31,7 +31,6 @@
   ".gitignore",
   ".git/"
   ],
-  "directory":"scss",
   "repository":{
     "type":"git",
     "url":"git://github.com/bryanerayner/SassySMACSS.git"
