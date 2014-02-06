@@ -1,0 +1,38 @@
+{
+  "name": "SassySMACSS",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bryanerayner/SassySMACSS",
+  "authors": [
+    "Bryan Rayner <bryanerayner@gmail.com>"
+  ],
+  "description": "Commonly used modules, written in SASS following the SMACSS style of naming. Not intended to be a framework, but a collection of commonly needed SASS partials and modules.",
+  "main": "css/sassySmacss.css",
+  "keywords": [
+    "SMACSS",
+    "Grid",
+    "Layout",
+    "SASS",
+    "Starter"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "cwd":"scss/",
+  "ignore":[
+  "css/",
+  "*.css",
+  "node_modules",
+  "Gruntfile.js",
+  ".DS_Store"
+  ],
+  "directory":"scss",
+  "repository":{
+    "type":"git",
+    "url":"git://github.com/bryanerayner/SassySMACSS.git"
+  }
+}

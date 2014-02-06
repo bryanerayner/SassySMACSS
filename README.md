@@ -40,8 +40,9 @@ This project is open to contributions. Just make sure the style matches the foll
 		li
 	}
 
-Submit a pull request if you have a useful mixin which can be simply included in a project.
+These conventions make it easier to select module names separately from module modes. They also enforce the SMACSS concept of Depth of Applicability; We don't want to restrict the HTML of projects.
 
+Submit a pull request if you have a useful mixin which can be simply included in a project. 
 
 
 ## Compilation
