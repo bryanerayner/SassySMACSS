@@ -1,14 +1,30 @@
-.l_constrained:before, .l_title:before, .l_colourblock:before,
+.l_constrained:before, .l_grid_container:before, .l_title:before, .l_colourblock:before,
 .l_constrained:after,
+.l_grid_container:after,
 .l_title:after,
 .l_colourblock:after {
   content: "";
   display: table; }
 
-.l_constrained:after, .l_title:after, .l_colourblock:after {
+.l_constrained:after, .l_grid_container:after, .l_title:after, .l_colourblock:after {
   clear: both; }
 
-.l_constrained, .l_title, .l_colourblock {
+.l_constrained, .l_grid_container, .l_title, .l_colourblock {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */ }
+
+.l_constrained:before, .l_grid_container:before, .l_title:before, .l_colourblock:before,
+.l_constrained:after,
+.l_grid_container:after,
+.l_title:after,
+.l_colourblock:after {
+  content: "";
+  display: table; }
+
+.l_constrained:after, .l_grid_container:after, .l_title:after, .l_colourblock:after {
+  clear: both; }
+
+.l_constrained, .l_grid_container, .l_title, .l_colourblock {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */ }
 
@@ -28,110 +44,146 @@
 .l_grid_container > .l_grid_cell-sm-1 {
   width: 8.33333%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-1 {
     width: 8.33333%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-1 {
+    width: 8.33333%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-1 {
     width: 8.33333%; } }
 .l_grid_container > .l_grid_cell-sm-2 {
   width: 16.66667%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-2 {
     width: 16.66667%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-2 {
+    width: 16.66667%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-2 {
     width: 16.66667%; } }
 .l_grid_container > .l_grid_cell-sm-3 {
   width: 25%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-3 {
     width: 25%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-3 {
+    width: 25%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-3 {
     width: 25%; } }
 .l_grid_container > .l_grid_cell-sm-4 {
   width: 33.33333%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-4 {
     width: 33.33333%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-4 {
+    width: 33.33333%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-4 {
     width: 33.33333%; } }
 .l_grid_container > .l_grid_cell-sm-5 {
   width: 41.66667%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-5 {
     width: 41.66667%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-5 {
+    width: 41.66667%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-5 {
     width: 41.66667%; } }
 .l_grid_container > .l_grid_cell-sm-6 {
   width: 50%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-6 {
     width: 50%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-6 {
+    width: 50%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-6 {
     width: 50%; } }
 .l_grid_container > .l_grid_cell-sm-7 {
   width: 58.33333%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-7 {
     width: 58.33333%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-7 {
+    width: 58.33333%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-7 {
     width: 58.33333%; } }
 .l_grid_container > .l_grid_cell-sm-8 {
   width: 66.66667%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-8 {
     width: 66.66667%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-8 {
+    width: 66.66667%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-8 {
     width: 66.66667%; } }
 .l_grid_container > .l_grid_cell-sm-9 {
   width: 75%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-9 {
     width: 75%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-9 {
+    width: 75%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-9 {
     width: 75%; } }
 .l_grid_container > .l_grid_cell-sm-10 {
   width: 83.33333%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-10 {
     width: 83.33333%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-10 {
+    width: 83.33333%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-10 {
     width: 83.33333%; } }
 .l_grid_container > .l_grid_cell-sm-11 {
   width: 91.66667%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-11 {
     width: 91.66667%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-11 {
+    width: 91.66667%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-11 {
     width: 91.66667%; } }
 .l_grid_container > .l_grid_cell-sm-12 {
   width: 100%; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .l_grid_container > .l_grid_cell-med-12 {
     width: 100%; } }
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .l_grid_container > .l_grid_cell-lg-12 {
+    width: 100%; } }
+@media (max-width: 1024px) {
+  .l_grid_container > .l_grid_cell-desktop-12 {
     width: 100%; } }
 .l_grid_container {
   width: 100%; }

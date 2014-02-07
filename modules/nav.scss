@@ -6,31 +6,44 @@
 
 $defaults-float: left !default;
 
-
+$defaults-nav--m_navItem-float: $defaults-float !default;
 $defaults-nav-float:$defaults-float !default;
+$defaults-nav-primary-float:$defaults-float !default;
+$defaults-nav-secondary-float:$defaults-float !default;
+
+@mixin nav--m_navItem
+{
+	display:block; float:$defaults-nav--m_navItem-float; width:100%;
+
+	@include mediaQuery_aboveSm()
+	{
+		width:auto;
+	}
+
+}
+
+
 
 
 .nav
 {
 	float:$defaults-nav-float;
-	> .nav_item
+	> .m_navItem
 	{
-		@include nav_item();
+		@include nav--m_navItem();
+	}
+
+	&.nav-primary
+	{
+
+	}
+	&.nav-secondary
+	{
+		
 	}
 }
 
-// Mixins to easily generate themes for these modules.
-@mixin change_nav()
-{
-	.nav
-	{ @content;	}
-}
 
-@mixin change_nav__nav_item()
-{
-	.nav
-	{
-		> .nav_item
-		{ @content; }
-	}
-}
+
+
+

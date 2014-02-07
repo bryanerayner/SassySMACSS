@@ -62,14 +62,14 @@ $defaults-float: left !default;
 
 
 
-@mixin create_grid($columnWidth:12, $useColumnNumber:false, $mediaQueries:("sm","med","lg"), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
+@mixin create_grid($columnWidth:12, $useColumnNumber:false, $mediaQueries:get_mediaQueries(), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
 {
 	@for $i from 1 through $columnWidth
 	{
 		@each $mediaQuery in $mediaQueries
 		{
-			// Check of the media query exists, and it's not small. By default, "sm" media queries 
-			@if (get_mediaQuery($mediaQuery) and $mediaQuery != "sm")
+			// Check of the media query exists, and it's not smallest. This causes mobile first to happen.
+			@if (get_mediaQuery($mediaQuery) and $mediaQuery != get_mediaQuery_name("smallest"))
 			{
 				@media(max-width:get_mediaQuery($mediaQuery))
 				{

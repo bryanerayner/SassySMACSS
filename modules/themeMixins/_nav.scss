@@ -1,0 +1,47 @@
+// Mixins to easily generate themes for these modules.
+@mixin change-nav()
+{
+	.nav
+	{ @content;	}
+}
+
+@mixin change-nav--m_navItem()
+{
+	.nav
+	{
+		> .m_navItem
+		{ @content; }
+	}
+}
+
+// Mixins to easily generate themes for these modules.
+@mixin change-nav-primary()
+{
+	.nav.nav-primary
+	{ @content;	}
+}
+
+@mixin change-nav-primary--m_navItem()
+{
+	.nav.nav-primary
+	{
+		> .m_navItem
+		{ @content; }
+	}
+}
+
+// Mixins to easily generate themes for these modules.
+@mixin change-nav-secondary()
+{
+	.nav.nav-secondary
+	{ @content;	}
+}
+
+@mixin change-nav-secondary--m_navItem()
+{
+	.nav.nav-secondary
+	{
+		> .m_navItem
+		{ @content; }
+	}
+}

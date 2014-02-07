@@ -1,14 +1,34 @@
-$defaults-media_queries-sm: 480px !default;
-$defaults-media_queries-med: 720px !default;
-$defaults-media_queries-lg: 1024px !default;
+$defaults-media_queries-sm: 320px !default;
+$defaults-media_queries-med: 640px !default;
+$defaults-media_queries-lg: 980px !default;
+$defaults-media_queries-desktop: 1024px !default;
+
+$defaults-media_queries-smallest: "sm";
+$defaults-media_queries-biggest: "desktop";
 
 @function get_mediaQueries()
 {
-	@return ("sm", "med", "lg");
+	@return ("sm", "med", "lg", "desktop");
+}
+
+@function get_mediaQuery_name($name)
+{
+	@if ($name == "smallest")
+	{	
+		@return $defaults-media_queries-smallest;
+	}
+	@if ($name == "biggest")
+	{	
+		@return $defaults-media_queries-biggest;
+	}
 }
 
 @function get_mediaQuery($name)
 {
+	@if ($name == "smallest" or $name == "biggest")
+	{
+		@return get_mediaQuery(get_mediaQuery_name($name));	
+	}
 	@if ($name == "sm")
 	{
 		@return $defaults-media_queries-sm;
@@ -21,6 +41,10 @@ $defaults-media_queries-lg: 1024px !default;
 	{
 		@return $defaults-media_queries-lg;
 	}
+	@if ($name == "desktop")
+	{
+		@return $defaults-media_queries-desktop;
+	}	
 	@else
 	{
 		@return null;

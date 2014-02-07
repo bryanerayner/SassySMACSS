@@ -23,16 +23,17 @@
     "tests"
   ],
   "ignore":[
-  "css/",
-  "*.css",
-  "node_modules",
-  "Gruntfile.js",
-  ".DS_Store",
-  ".gitignore",
-  ".git/",
-  "package.json",
-  ".sass-cache/",
-  "bower.json"
+    "css/",
+    "*.css",
+    "node_modules",
+    "Gruntfile.js",
+    ".DS_Store",
+    ".gitignore",
+    ".git/",
+    "package.json",
+    ".sass-cache/",
+    "bower.json",
+    "tests/"
   ],
   "repository":{
     "type":"git",

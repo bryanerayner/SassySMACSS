@@ -1,0 +1,112 @@
+
+
+@mixin change-post_preview()
+{
+	.post_preview 
+	{ @content;	}
+}
+
+@mixin change-post_preview--m_image()
+{
+	.post_preview 
+	{
+		> .m_image
+		{ @content; }
+	}
+}
+
+@mixin change-post_preview--module_picture()
+{
+	.post_preview 
+	{
+		> .module.picture
+		{ @content; }
+	}
+}
+
+@mixin change-post_preview--m_list()
+{
+	.post_preview 
+	{
+		> .m_list
+		{ @content;	}
+	}
+}
+@mixin change-post_preview--m_list--m_listItem()
+{
+	.post_preview 
+	{
+		> .m_list
+		{
+			> .m_listItem
+			{ @content; }
+		}
+	}
+}
+
+@mixin change-post_preview--module-summary()
+{
+	.post_preview 
+	{
+		.module.summary
+		{ @content;	}
+	}
+}
+
+
+// post_preview-wide
+
+
+
+@mixin change-post_preview-wide()
+{
+	.post_preview.post_preview-wide 
+	{ @content;	}
+}
+
+@mixin change-post_preview-wide--m_image()
+{
+	.post_preview.post_preview-wide 
+	{
+		> .m_image
+		{ @content; }
+	}
+}
+
+@mixin change-post_preview-wide--module_picture()
+{
+	.post_preview.post_preview-wide 
+	{
+		> .module.picture
+		{ @content; }
+	}
+}
+
+@mixin change-post_preview-wide--m_list()
+{
+	.post_preview.post_preview-wide 
+	{
+		> .m_list
+		{ @content;	}
+	}
+}
+@mixin change-post_preview-wide--m_list--m_listItem()
+{
+	.post_preview.post_preview-wide 
+	{
+		> .m_list
+		{
+			> .m_listItem
+			{ @content; }
+		}
+	}
+}
+
+@mixin change-post_preview-wide--module-summary()
+{
+	.post_preview.post_preview-wide 
+	{
+		.module.summary
+		{ @content;	}
+	}
+}

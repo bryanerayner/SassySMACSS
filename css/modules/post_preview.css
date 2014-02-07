@@ -1,0 +1,35 @@
+.post_preview:before,
+.post_preview:after {
+  content: "";
+  display: table; }
+
+.post_preview:after {
+  clear: both; }
+
+.post_preview {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */ }
+
+.post_preview > .m_image, .post_preview .module.picture {
+  width: 100%; }
+.post_preview > .m_list {
+  width: 100%;
+  list-style: none;
+  float: left; }
+  .post_preview > .m_list > .m_listItem {
+    width: 100%;
+    float: left;
+    clear: left; }
+.post_preview > .module.summary {
+  width: 100%;
+  padding: 6% 3%;
+  float: left; }
+.post_preview.post_preview-wide > .m_image, .post_preview.post_preview-wide .module.picture {
+  width: 33%;
+  float: left; }
+.post_preview.post_preview-wide > .m_list {
+  width: 64%;
+  float: right; }
+.post_preview.post_preview-wide > .module.summary {
+  width: 64%;
+  float: right; }

@@ -1,0 +1,44 @@
+@mixin change_l_left()
+	{
+		@content;
+	}
+@mixin change_l_right()
+	{
+		@content;
+	}
+@mixin change_l_constrained()
+	{
+		@content;
+	}
+@mixin change_l_constrained-wider()
+			{
+				@content;
+			}
+@mixin change_l_topBar()
+	{
+		@content;
+	}
+@mixin change_l_topBar-is-pinned()
+		{
+			@content;
+		}
+@mixin change_l_bottomBar()
+	{
+		@content;
+	}
+@mixin change_l_title()
+{
+	@content;
+}
+@mixin change_l_colourblock()
+{
+	@content;
+}
+@mixin change_l_relative()
+	{
+		@content;
+	}
+@mixin change_l_absoluteCenter()
+	{
+		@content;
+	}
