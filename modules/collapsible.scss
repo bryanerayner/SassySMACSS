@@ -1,0 +1,38 @@
+@import "mixins/layout";
+@import "mixins/mediaQueries";
+
+
+$defaults-float: left !default;
+
+$defaults-collapsible-float: $defaults-float !default;
+
+.collapsible
+{
+	@extend %clearfix;
+	&.is-active.is-collapsed
+	{
+		.collapsible.is-collapsed
+		{
+			> .m_collapse
+			{
+				display: none;
+			}
+		}
+		.collapsible
+		{
+			> .m_label, > .m_collapseButton
+			{
+				display:block;
+			}
+			> .m_collapse
+			{
+				display: block;
+			}
+		}
+	}
+
+	.m_collapseButton
+	{
+		display:none;
+	}
+}

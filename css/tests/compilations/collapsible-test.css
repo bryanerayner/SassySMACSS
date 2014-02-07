@@ -1,30 +1,38 @@
-.l_constrained:before, .l_grid_container:before, .l_title:before, .l_colourblock:before,
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box; }
+
+.l_constrained:before, .l_grid_container:before, .l_title:before, .l_colourblock:before, .collapsible:before,
 .l_constrained:after,
 .l_grid_container:after,
 .l_title:after,
-.l_colourblock:after {
+.l_colourblock:after,
+.collapsible:after {
   content: "";
   display: table; }
 
-.l_constrained:after, .l_grid_container:after, .l_title:after, .l_colourblock:after {
+.l_constrained:after, .l_grid_container:after, .l_title:after, .l_colourblock:after, .collapsible:after {
   clear: both; }
 
-.l_constrained, .l_grid_container, .l_title, .l_colourblock {
+.l_constrained, .l_grid_container, .l_title, .l_colourblock, .collapsible {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */ }
 
-.l_constrained:before, .l_grid_container:before, .l_title:before, .l_colourblock:before,
+.l_constrained:before, .l_grid_container:before, .l_title:before, .l_colourblock:before, .collapsible:before,
 .l_constrained:after,
 .l_grid_container:after,
 .l_title:after,
-.l_colourblock:after {
+.l_colourblock:after,
+.collapsible:after {
   content: "";
   display: table; }
 
-.l_constrained:after, .l_grid_container:after, .l_title:after, .l_colourblock:after {
+.l_constrained:after, .l_grid_container:after, .l_title:after, .l_colourblock:after, .collapsible:after {
   clear: both; }
 
-.l_constrained, .l_grid_container, .l_title, .l_colourblock {
+.l_constrained, .l_grid_container, .l_title, .l_colourblock, .collapsible {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */ }
 
@@ -255,3 +263,61 @@
   top: 0;
   right: 0;
   bottom: 0; }
+
+.l_constrained:before, .l_grid_container:before, .l_title:before, .l_colourblock:before, .collapsible:before,
+.l_constrained:after,
+.l_grid_container:after,
+.l_title:after,
+.l_colourblock:after,
+.collapsible:after {
+  content: "";
+  display: table; }
+
+.l_constrained:after, .l_grid_container:after, .l_title:after, .l_colourblock:after, .collapsible:after {
+  clear: both; }
+
+.l_constrained, .l_grid_container, .l_title, .l_colourblock, .collapsible {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */ }
+
+.nav {
+  float: left; }
+  .nav > .m_navItem, .nav > .m_navGroup {
+    display: block;
+    float: left;
+    width: 100%;
+    width: auto;
+    width: auto;
+    width: auto; }
+  .nav .m_navGroup > .m_navItem, .nav .m_navGroup .m_navGroupLabel {
+    display: block;
+    float: left;
+    width: 100%;
+    width: auto;
+    width: auto;
+    width: auto; }
+
+.l_constrained:before, .l_grid_container:before, .l_title:before, .l_colourblock:before, .collapsible:before,
+.l_constrained:after,
+.l_grid_container:after,
+.l_title:after,
+.l_colourblock:after,
+.collapsible:after {
+  content: "";
+  display: table; }
+
+.l_constrained:after, .l_grid_container:after, .l_title:after, .l_colourblock:after, .collapsible:after {
+  clear: both; }
+
+.l_constrained, .l_grid_container, .l_title, .l_colourblock, .collapsible {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */ }
+
+.collapsible.is-active.is-collapsed .collapsible.is-collapsed > .m_collapse {
+  display: none; }
+.collapsible.is-active.is-collapsed .collapsible > .m_label, .collapsible.is-active.is-collapsed .collapsible > .m_collapseButton {
+  display: block; }
+.collapsible.is-active.is-collapsed .collapsible > .m_collapse {
+  display: block; }
+.collapsible .m_collapseButton {
+  display: none; }

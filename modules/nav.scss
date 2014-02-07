@@ -1,9 +1,6 @@
 @import "mixins/layout";
 @import "mixins/mediaQueries";
 
-@import "nav_item";
-
-
 $defaults-float: left !default;
 
 $defaults-nav--m_navItem-float: $defaults-float !default;
@@ -19,7 +16,6 @@ $defaults-nav-secondary-float:$defaults-float !default;
 	{
 		width:auto;
 	}
-
 }
 
 
@@ -28,9 +24,18 @@ $defaults-nav-secondary-float:$defaults-float !default;
 .nav
 {
 	float:$defaults-nav-float;
-	> .m_navItem
+
+	> .m_navItem, > .m_navGroup
 	{
 		@include nav--m_navItem();
+	}
+
+	.m_navGroup
+	{
+		> .m_navItem, .m_navGroupLabel
+		{
+			@include nav--m_navItem();
+		}
 	}
 
 	&.nav-primary
@@ -42,8 +47,3 @@ $defaults-nav-secondary-float:$defaults-float !default;
 		
 	}
 }
-
-
-
-
-

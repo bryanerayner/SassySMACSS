@@ -3,6 +3,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    uglify:
+    {
+      
+    }
+
     sass:
     {
       dist:
@@ -20,7 +25,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: ["**/*.scss"],
-      tasks: ['newer:sass']
+      tasks: ['sass']
     }
   });
 
