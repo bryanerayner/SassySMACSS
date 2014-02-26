@@ -1,6 +1,7 @@
 ## SCSS
 
 .scss-cache/
+*.scssc
 node_modules/
 
 #################
