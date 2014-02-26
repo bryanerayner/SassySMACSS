@@ -3,6 +3,7 @@
 
 $defaults-grid_cell-cellClassName: l_grid_cell !default;
 $defaults-grid_cell-columnClassName: l_grid_container !default;
+$defaults-grid_cell-padding: 1.5% !default;
 
 $defaults-float: left !default;
 
@@ -10,7 +11,7 @@ $defaults-float: left !default;
 // If $useColumnNumber is set to true, this mixin will generate a number as well
 // as the column name.
 //
-@mixin grid_cell($cellWidth, $columnWidth, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName, $useFloat:false)
+@mixin grid_cell($cellWidth, $columnWidth, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName, $useFloat:false, $cellPadding: 3%)
 {
 	$numberPrefix:"";
 	@if $useColumnNumber == true
@@ -26,7 +27,11 @@ $defaults-float: left !default;
 			{
 				float: $defaults-float;	
 			}
-			width: percentage($cellWidth/$columnWidth);
+			width: percentage($cellWidth/$columnWidth); 
+			@if ($cellWidth != $columnWidth)
+			{
+				padding-left: $cellPadding; padding-right: $cellPadding;
+			}
 		}
 	}
 
@@ -39,50 +44,50 @@ $defaults-float: left !default;
 // $modeName: The name to prefix onto grid_cell
 // $cellClassName: The class name for each grid_cell
 // $columnClassName: The class name for each grid_column
-@mixin grid_cell-mode($cellWidth, $columnWidth, $modeName, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
+@mixin grid_cell-mode($cellWidth, $columnWidth, $modeName, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName, $cellPadding:$defaults-grid_cell-padding)
 {
-	@include grid_cell($cellWidth, $columnWidth, $useColumnNumber, #{$cellClassName}-#{$modeName}, $columnClassName);
+	@include grid_cell($cellWidth, $columnWidth, $useColumnNumber, #{$cellClassName}-#{$modeName}, $columnClassName, false, $cellPadding);
 }
 
-@mixin grid_cell-sm($cellWidth, $columnWidth, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
+@mixin grid_cell-sm($cellWidth, $columnWidth, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName, $cellPadding:$defaults-grid_cell-padding)
 {
-	@include grid_cell($cellWidth, $columnWidth, sm, $useColumnNumber, $cellClassName, $columnClassName);
+	@include grid_cell-mode($cellWidth, $columnWidth, sm, $useColumnNumber, $cellClassName, $columnClassName, false, $cellPadding);
 }
 
-@mixin grid_cell-med($cellWidth, $columnWidth, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
+@mixin grid_cell-med($cellWidth, $columnWidth, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName, $cellPadding:$defaults-grid_cell-padding)
 {
-	@include grid_cell($cellWidth, $columnWidth, med, $useColumnNumber, $cellClassName, $columnClassName);
+	@include grid_cell-mode($cellWidth, $columnWidth, med, $useColumnNumber, $cellClassName, $columnClassName, false, $cellPadding);
 }
 
-@mixin grid_cell-lg($cellWidth, $columnWidth, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
+@mixin grid_cell-lg($cellWidth, $columnWidth, $useColumnNumber:false, $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName, $cellPadding:$defaults-grid_cell-padding)
 {
-	@include grid_cell($cellWidth, $columnWidth, lg, $useColumnNumber, $cellClassName, $columnClassName);
+	@include grid_cell-mode($cellWidth, $columnWidth, lg, $useColumnNumber, $cellClassName, $columnClassName, false, $cellPadding);
 }
 
 
-
-
-@mixin create_grid($columnWidth:12, $useColumnNumber:false, $mediaQueries:get_mediaQueries(), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName)
+@mixin create_grid($columnWidth:12, $useColumnNumber:false, $mediaQueries:get_mediaQueries(), $cellClassName:$defaults-grid_cell-cellClassName, $columnClassName:$defaults-grid_cell-columnClassName, $cellPadding: $defaults-grid_cell-padding)
 {
-	@for $i from 1 through $columnWidth
+	@each $mediaQuery in $mediaQueries
 	{
-		@each $mediaQuery in $mediaQueries
+		@for $i from 1 through $columnWidth
 		{
+			
 			// Check of the media query exists, and it's the smallest. We want the smallest to be first in the cascade
 			@if ($mediaQuery == get_mediaQuery_name("smallest"))
 			{
-				@include grid_cell-mode($i, $columnWidth, $mediaQuery,$useColumnNumber, $cellClassName, $columnClassName);
+				@include grid_cell-mode($i, $columnWidth, $mediaQuery,$useColumnNumber, $cellClassName, $columnClassName, false, $cellPadding);
 			}
 			@if (get_mediaQuery($mediaQuery))
 			{
 				@media(min-width:get_mediaQuery($mediaQuery))
 				{
-					@include grid_cell-mode($i, $columnWidth, $mediaQuery, $useColumnNumber, $cellClassName, $columnClassName);	
+					@include grid_cell-mode($i, $columnWidth, $mediaQuery, $useColumnNumber, $cellClassName, $columnClassName, false, $cellPadding);	
 				}				
 			}
 			
 		}
 	}
+	
 	$numberPrefix:"";
 	@if $useColumnNumber == true
 	{
