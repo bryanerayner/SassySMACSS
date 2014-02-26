@@ -9,29 +9,40 @@ $defaults-collapsible-float: $defaults-float !default;
 .collapsible
 {
 	@extend %clearfix;
-	&.is-active.is-collapsed
+
+	&.is-active
 	{
-		.collapsible.is-collapsed
+
+		&.is-collapsed
 		{
-			> .m_collapse
+			.m_collapsible_target
 			{
 				display: none;
 			}
-		}
-		.collapsible
-		{
-			> .m_label, > .m_collapseButton
+			.collapsible.is-collapsed
 			{
-				display:block;
+				> .m_collapsible_target
+				{
+					display: none;
+				}
 			}
-			> .m_collapse
+			.collapsible
 			{
-				display: block;
+				> .m_collapsible_label, > .m_collapseButton
+				{
+					display:block;
+				}
+				> .m_collapsible_target
+				{
+					display: block;
+				}
 			}
 		}
+
+
 	}
 
-	.m_collapseButton
+	&:not([class*=is-active]) > .m_collapseButton
 	{
 		display:none;
 	}

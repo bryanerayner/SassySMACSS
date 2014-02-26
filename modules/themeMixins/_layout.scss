@@ -1,44 +1,77 @@
 @mixin change_l_left()
 	{
-		@content;
+		.l_left
+		{
+			@content;			
+		}
 	}
 @mixin change_l_right()
 	{
-		@content;
+		.l_right
+		{
+			@content;			
+		}
 	}
 @mixin change_l_constrained()
 	{
-		@content;
+		.l_constrained
+		{
+			@content;			
+		}
 	}
 @mixin change_l_constrained-wider()
 			{
-				@content;
+				.l_constrained
+				{
+					@content;					
+				}
 			}
 @mixin change_l_topBar()
 	{
-		@content;
+		.l_topBar
+		{
+			@content;			
+		}
 	}
 @mixin change_l_topBar-is-pinned()
 		{
-			@content;
+			.l_topBar
+			{
+				@content;				
+			}
 		}
 @mixin change_l_bottomBar()
 	{
-		@content;
+		.l_bottomBar
+		{
+			@content;			
+		}
 	}
 @mixin change_l_title()
 {
-	@content;
+	.l_title
+	{
+		@content;		
+	}
 }
 @mixin change_l_colourblock()
 {
-	@content;
+	.l_colourblock
+	{
+		@content;		
+	}
 }
 @mixin change_l_relative()
 	{
-		@content;
+		.l_relative
+		{
+			@content;			
+		}
 	}
 @mixin change_l_absoluteCenter()
 	{
-		@content;
+		.l_absoluteCenter
+		{
+			@content;			
+		}
 	}

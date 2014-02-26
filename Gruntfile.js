@@ -3,10 +3,35 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    autoprefixer:
+    {
+      dist:
+      {
+        options: {
+          browsers: ['last 2 version', 'ie 8', 'ie 9']
+        },
+        files:[{
+          expand: true,
+          src: ['**/*.css'],
+          dest: '',
+          ext: '.css'
+        }]     
+      }
+    },
+
     uglify:
     {
-      
-    }
+      lib:
+      {
+        mangle:true,
+        compress:true,
+        files:[{
+          expand:true,
+          src: ['lib/**.js', '!lib/**.min.js'],
+          ext: '.min.js'
+        }]
+      }
+    },
 
     sass:
     {
@@ -25,15 +50,17 @@ module.exports = function(grunt) {
 
     watch: {
       files: ["**/*.scss"],
-      tasks: ['sass']
+      tasks: ['newer:sass', 'newer:autoprefixer', 'newer:uglify']
     }
   });
-
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-watch');
   
 
-  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'uglify', 'watch']);
+
 
 };

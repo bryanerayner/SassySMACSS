@@ -1,0 +1,156 @@
+// If you'd like to call navicon a hamburger, change $defaults-navicon_is_hamburger to true;
+
+
+// Credits to this go to http://codepen.io/bennettfeely/pen/twbyA and the wonderful examples there.
+// 
+
+$defaults-navicon_is_hamburger: false !default;
+
+$defaults-navicon-name: navicon !default;
+
+$defaults-navicon-transition-duration: .5s !default;
+
+$defaults-navicon-background: #666 !default;
+
+$defaults-navicon-toggled_size: .75 !default;
+
+
+@if ($defaults-navicon_is_hamburger)
+{
+	$defaults-navicon-name: hamburger;
+}
+
+$navicon:$defaults-navicon-name;
+$navicon-transition-duration: $defaults-navicon-transition-duration !default;
+$navicon-background: $defaults-navicon-background !default;
+
+$navicon-toggled_size: $defaults-navicon-toggled_size;
+
+.#{$navicon}
+{
+  display: inline-block;
+  position: relative;
+  padding: 2.0625rem 1.5rem;
+  transition: $navicon-transition-duration/2;
+  cursor: pointer;
+  user-select: none;
+  opacity: .8;
+
+  &:hover, &.is-hover {
+    transition: $navicon-transition-duration;
+    opacity: 1;
+    
+    > .m_icon:before, > .m_icon:after {
+      transition: $navicon-transition-duration/2;
+    }
+    
+    > .m_icon:after { top: -.825rem; }
+    > .m_icon:before { top: .825rem; }
+  }
+
+  > .m_icon
+  {
+  	background:$navicon-background;
+  	position: relative;
+  	width: 2.5em;
+  	height: .3125rem;
+  	transition: $navicon-transition-duration;
+  	border-radius: 2.5rem;
+
+  	&:after, &:before {
+    	background: $navicon-background;
+    	display: block;
+    	content: "";
+    	height: .3125rem;
+    	width: 2.5rem;
+    	position: absolute;
+    	transition: $navicon-transition-duration ($navicon-transition-duration/2);
+    	border-radius: 1rem;
+  	}
+
+	&:after { top: -.625rem; }
+	&:before { top: .625rem; }
+  }
+}
+
+@mixin naviconArrow()
+{
+	> .m_icon
+	{
+		&:before, &:after {
+	      width: 1.5rem;
+	    }
+	    
+	    &:before { transform: rotate(35deg); transform-origin: left top; }
+	    &:after { transform: rotate(-35deg); transform-origin: left bottom; }
+	}
+		
+}
+
+@mixin naviconCross()
+{
+  > .m_icon {
+    background: transparent;
+    
+    &:after { transform: rotate(45deg); }  
+    &:before { transform: rotate(-45deg); }  
+  }
+		
+}
+
+
+// State changes
+.#{$navicon}.is-open
+{
+	transform: scale($navicon-toggled_size); 
+
+	> .m_icon
+	{
+		&:before, &:after
+		{
+			transition: $navicon-transition-duration;
+			top: 0;
+		}
+	}
+
+	&.#{$navicon}-larr
+	{
+		@include naviconArrow();
+	}
+
+	&.#{$navicon}-rarr
+	{
+		@include naviconArrow();	
+		> .m_icon
+		{
+		    &:before { transform: translate3d(1em,0,0) rotate(-35deg); transform-origin: right top; }
+		    &:after { transform: translate3d(1em,0,0) rotate(35deg); transform-origin: right bottom; }
+		}
+  
+	}
+
+	&.#{$navicon}-uarr
+	{
+		@include naviconArrow();
+		transform: scale($navicon-toggled_size) rotate(90deg);
+	}
+
+	&.#{$navicon}-plus
+	{
+		@include naviconCross();
+		transform: scale($navicon-toggled_size) rotate(45deg);
+	}
+
+	&.#{$navicon}-close
+	{
+		@include naviconCross();
+	} 
+
+	&.#{$navicon}-minus
+	{
+		
+	}
+
+
+
+}

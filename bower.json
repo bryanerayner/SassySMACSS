@@ -23,8 +23,8 @@
     "tests"
   ],
   "ignore":[
-    "css/",
-    "*.css",
+    "css/node_modules",
+    "css/tests",
     "node_modules",
     "Gruntfile.js",
     ".DS_Store",

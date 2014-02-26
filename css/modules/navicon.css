@@ -1,0 +1,144 @@
+.navicon {
+  display: inline-block;
+  position: relative;
+  padding: 2.0625rem 1.5rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: .8; }
+  .navicon:hover, .navicon.is-hover {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 1; }
+    .navicon:hover > .m_icon:before, .navicon:hover > .m_icon:after, .navicon.is-hover > .m_icon:before, .navicon.is-hover > .m_icon:after {
+      -webkit-transition: 0.25s;
+      transition: 0.25s; }
+    .navicon:hover > .m_icon:after, .navicon.is-hover > .m_icon:after {
+      top: -.825rem; }
+    .navicon:hover > .m_icon:before, .navicon.is-hover > .m_icon:before {
+      top: .825rem; }
+  .navicon > .m_icon {
+    background: #666666;
+    position: relative;
+    width: 2.5em;
+    height: .3125rem;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 2.5rem; }
+    .navicon > .m_icon:after, .navicon > .m_icon:before {
+      background: #666666;
+      display: block;
+      content: "";
+      height: .3125rem;
+      width: 2.5rem;
+      position: absolute;
+      -webkit-transition: 0.5s 0.25s;
+      transition: 0.5s 0.25s;
+      border-radius: 1rem; }
+    .navicon > .m_icon:after {
+      top: -.625rem; }
+    .navicon > .m_icon:before {
+      top: .625rem; }
+
+.navicon.is-open {
+  -webkit-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  transform: scale(0.75); }
+  .navicon.is-open > .m_icon:before, .navicon.is-open > .m_icon:after {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    top: 0; }
+  .navicon.is-open.navicon-larr > .m_icon:before, .navicon.is-open.navicon-larr > .m_icon:after {
+    width: 1.5rem; }
+  .navicon.is-open.navicon-larr > .m_icon:before {
+    -webkit-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    transform: rotate(35deg);
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top; }
+  .navicon.is-open.navicon-larr > .m_icon:after {
+    -webkit-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom; }
+  .navicon.is-open.navicon-rarr > .m_icon:before, .navicon.is-open.navicon-rarr > .m_icon:after {
+    width: 1.5rem; }
+  .navicon.is-open.navicon-rarr > .m_icon:before {
+    -webkit-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    transform: rotate(35deg);
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top; }
+  .navicon.is-open.navicon-rarr > .m_icon:after {
+    -webkit-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom; }
+  .navicon.is-open.navicon-rarr > .m_icon:before {
+    -webkit-transform: translate3d(1em, 0, 0) rotate(-35deg);
+    -ms-transform: translate3d(1em, 0, 0) rotate(-35deg);
+    transform: translate3d(1em, 0, 0) rotate(-35deg);
+    -webkit-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top; }
+  .navicon.is-open.navicon-rarr > .m_icon:after {
+    -webkit-transform: translate3d(1em, 0, 0) rotate(35deg);
+    -ms-transform: translate3d(1em, 0, 0) rotate(35deg);
+    transform: translate3d(1em, 0, 0) rotate(35deg);
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom; }
+  .navicon.is-open.navicon-uarr {
+    -webkit-transform: scale(0.75) rotate(90deg);
+    -ms-transform: scale(0.75) rotate(90deg);
+    transform: scale(0.75) rotate(90deg); }
+    .navicon.is-open.navicon-uarr > .m_icon:before, .navicon.is-open.navicon-uarr > .m_icon:after {
+      width: 1.5rem; }
+    .navicon.is-open.navicon-uarr > .m_icon:before {
+      -webkit-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+      transform: rotate(35deg);
+      -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+      transform-origin: left top; }
+    .navicon.is-open.navicon-uarr > .m_icon:after {
+      -webkit-transform: rotate(-35deg);
+      -ms-transform: rotate(-35deg);
+      transform: rotate(-35deg);
+      -webkit-transform-origin: left bottom;
+      -ms-transform-origin: left bottom;
+      transform-origin: left bottom; }
+  .navicon.is-open.navicon-plus {
+    -webkit-transform: scale(0.75) rotate(45deg);
+    -ms-transform: scale(0.75) rotate(45deg);
+    transform: scale(0.75) rotate(45deg); }
+    .navicon.is-open.navicon-plus > .m_icon {
+      background: transparent; }
+      .navicon.is-open.navicon-plus > .m_icon:after {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      .navicon.is-open.navicon-plus > .m_icon:before {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg); }
+  .navicon.is-open.navicon-close > .m_icon {
+    background: transparent; }
+    .navicon.is-open.navicon-close > .m_icon:after {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .navicon.is-open.navicon-close > .m_icon:before {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
