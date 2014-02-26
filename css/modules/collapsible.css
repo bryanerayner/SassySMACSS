@@ -1,0 +1,22 @@
+.collapsible:before,
+.collapsible:after {
+  content: "";
+  display: table; }
+
+.collapsible:after {
+  clear: both; }
+
+.collapsible {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */ }
+
+.collapsible.is-active.is-collapsed .m_collapsible_target {
+  display: none; }
+.collapsible.is-active.is-collapsed .collapsible.is-collapsed > .m_collapsible_target {
+  display: none; }
+.collapsible.is-active.is-collapsed .collapsible > .m_collapsible_label, .collapsible.is-active.is-collapsed .collapsible > .m_collapseButton {
+  display: block; }
+.collapsible.is-active.is-collapsed .collapsible > .m_collapsible_target {
+  display: block; }
+.collapsible:not([class*=is-active]) > .m_collapseButton {
+  display: none; }

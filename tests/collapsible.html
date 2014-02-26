@@ -1,0 +1,115 @@
+<!doctype>
+<html>
+	<head>
+		<title>Collapsible</title>
+		<link rel="stylesheet" href="../css/tests/compilations/collapsible-test.css">
+		<link rel="stylesheet" href="../css/tests/themes/theme-collapsible-test.css">
+	</head>
+	<body>
+		<div class="l_grid_container">
+			<div class="l_grid_cell-sm-6">
+				<header class="l_topbar">
+					<nav class="collapsible is-active is-collapsed">
+						<div class="m_collapseButton"></div>
+						<ul class="collapsible is-collapsed nav nav-primary">
+							<li class="m_collapsible_label">Is Active Is Collapsed</li>
+							<li class="m_collapsible_target m_navItem">About</li>
+							<li class="m_navGroup">
+								<ul class="collapsible is-collapsed">
+									<li class="m_collapsible_label m_navGroupLabel">Sub group Collapsed</li>
+									<li class="m_collapsible_target m_navItem">About</li>
+									<li class="m_collapsible_target m_navItem">About</li>
+								</ul>								
+							</li>
+
+							<li class="m_navGroup">
+								<ul class="collapsible">
+									<li class="m_collapsible_label m_navGroupLabel">Sub group open</li>
+									<li class="m_collapsible_target m_navItem">Sub About</li>
+									<li class="m_collapsible_target m_navItem">Sub About</li>
+								</ul>								
+							</li>
+							<li class="m_collapsible_target m_navItem">Breaking News</li>
+							<li class="m_collapsible_target m_navItem">Challengingly</li>
+							<li class="m_collapsible_target m_navItem">Tweets</li>
+							<li class="m_collapsible_target m_navItem">Eats</li>
+						</ul>
+						<ul class="collapsible nav nav-secondary">
+							<li class="m_collapsible_label">Secondary</li>
+							<li class="m_collapsible_target m_navItem">About</li>
+							<li class="m_collapsible_target m_navItem">Home</li>
+							<li class="m_collapsible_target m_navItem">Breaking News</li>
+							<li class="m_collapsible_target m_navItem">Challengingly</li>
+							<li class="m_collapsible_target m_navItem">Tweets</li>
+							<li class="m_collapsible_target m_navItem">Eats</li>
+						</ul>
+						
+					</nav>
+				</header>
+			</div>
+			<div class="l_grid_cell-sm-6">
+				<header class="l_topbar">
+					<nav class="collapsible is-active">
+						<div class="m_collapseButton"></div>
+						<ul class="collapsible nav nav-primary">
+							<li class="m_collapsible_label">Is Active</li>
+							<li class="m_collapsible_target m_navItem">About</li>
+							<li class="m_collapsible_target m_navItem">Home</li>
+							<li class="m_collapsible_target m_navItem">Breaking News</li>
+							<li class="m_collapsible_target m_navItem">Challengingly</li>
+							<li class="m_collapsible_target m_navItem">Tweets</li>
+							<li class="m_collapsible_target m_navItem">Eats</li>
+						</ul>
+						<ul class="collapsible nav nav-secondary">
+							<li class="m_collapsible_label">Secondary</li>
+							<li class="m_collapsible_target m_navItem">About</li>
+							<li class="m_collapsible_target m_navItem">Home</li>
+							<li class="m_collapsible_target m_navItem">Breaking News</li>
+							<li class="m_collapsible_target m_navItem">Challengingly</li>
+							<li class="m_collapsible_target m_navItem">Tweets</li>
+							<li class="m_collapsible_target m_navItem">Eats</li>
+						</ul>
+						
+					</nav>
+				</header>
+			</div>
+			<div class="l_grid_cell-sm-6 l_grid_cell-last">
+				<header class="l_topbar">
+					<nav class="collapsible">
+						<div class="m_collapseButton"></div>
+						<ul class="collapsible nav nav-primary">
+							<li class="m_collapsible_label">Primary</li>
+							<li class="m_collapsible_target m_navItem">About</li>
+							<li class="m_collapsible_target m_navItem">Home</li>
+							<li class="m_collapsible_target m_navItem">Breaking News</li>
+							<li class="m_collapsible_target m_navItem">Challengingly</li>
+							<li class="m_collapsible_target m_navItem">Tweets</li>
+							<li class="m_collapsible_target m_navItem">Eats</li>
+						</ul>
+						<ul class="collapsible nav nav-secondary">
+							<li class="m_collapsible_label">Secondary</li>
+							<li class="m_collapsible_target m_navItem">About</li>
+							<li class="m_collapsible_target m_navItem">Home</li>
+							<li class="m_collapsible_target m_navItem">Breaking News</li>
+							<li class="m_collapsible_target m_navItem">Challengingly</li>
+							<li class="m_collapsible_target m_navItem">Tweets</li>
+							<li class="m_collapsible_target m_navItem">Eats</li>
+						</ul>
+						
+					</nav>
+				</header>
+			</div>
+
+		</div>
+		<script type = "text/javascript" src = "../lib/zepto/zepto.js"></script>
+		<script type = "text/javascript" src = "../lib/collapsible.js"></script>
+		<script type="text/javascript">
+
+
+		Zepto(function($){
+			Sassy.collapsible();
+		});
+
+		</script>
+	</body>
+</html>

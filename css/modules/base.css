@@ -1,5 +1,4 @@
 *, *::before, *::after {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   /* Firefox, other Gecko */
   box-sizing: border-box; }

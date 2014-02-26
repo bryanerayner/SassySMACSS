@@ -1,0 +1,49 @@
+@import "mixins/layout";
+@import "mixins/mediaQueries";
+
+
+$defaults-float: left !default;
+
+$defaults-collapsible-float: $defaults-float !default;
+
+.collapsible
+{
+	@extend %clearfix;
+
+	&.is-active
+	{
+
+		&.is-collapsed
+		{
+			.m_collapsible_target
+			{
+				display: none;
+			}
+			.collapsible.is-collapsed
+			{
+				> .m_collapsible_target
+				{
+					display: none;
+				}
+			}
+			.collapsible
+			{
+				> .m_collapsible_label, > .m_collapseButton
+				{
+					display:block;
+				}
+				> .m_collapsible_target
+				{
+					display: block;
+				}
+			}
+		}
+
+
+	}
+
+	&:not([class*=is-active]) > .m_collapseButton
+	{
+		display:none;
+	}
+}

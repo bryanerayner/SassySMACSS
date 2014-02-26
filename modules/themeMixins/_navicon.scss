@@ -1,0 +1,27 @@
+// If you'd like to call navicon a hamburger, change $defaults-navicon_is_hamburger to true;
+
+$defaults-navicon_is_hamburger: false !default;
+
+$defaults-navicon-name: navicon !default;
+
+$defaults-navicon-transition-duration: .5s !default;
+
+
+
+
+@if ($defaults-navicon_is_hamburger)
+{
+	$defaults-navicon-name: hamburger;
+}
+
+$navicon: $defaults-navicon-name;
+
+
+
+@mixin change-#{$navicon}()
+{
+	.#{$navicon}
+	{
+		@content;
+	}
+}

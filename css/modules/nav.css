@@ -1,6 +1,13 @@
 .nav {
   float: left; }
-  .nav > .m_navItem {
+  .nav > .m_navItem, .nav > .m_navGroup {
+    display: block;
+    float: left;
+    width: 100%;
+    width: auto;
+    width: auto;
+    width: auto; }
+  .nav .m_navGroup > .m_navItem, .nav .m_navGroup .m_navGroupLabel {
     display: block;
     float: left;
     width: 100%;

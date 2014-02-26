@@ -3,11 +3,39 @@ Sassy SMACSS
 
 Sassy SMACSS is a collection of simple SASS mixins designed to assist in SMACSS style projects. Common modules (like layout and cross browser mixins) are included.
 
+## Usage
+
+Sassy SMACSS can be included via Bower.
+
+#### Example:
+
+    "dependencies": {
+        "SassySMACSS": ">=0.0.4"
+    }
+
+The Bower plugin will provide the following directories:
+
+	modules - Actual module files
+	mixins	- Mixins available for use
+	lib 	- Javascript for certain components
+	css		- CSS output, for those who do not wish to recompile
+
+SassySMACSS relies on [Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer") to handle browser prefixes. When building using SCSS files, remember to use a similar post-processor to avoid problems.
+
 
 ## Naming Conventions
 
-Modules are named using underscores:
+SassySMACSS is intended to be used in conjunction with a SMACSS style project. As such, naming conventions are very different than the type used in Bootstrap or Foundation.
 
+SMACSS is based on commonly used semantics. Common elements are grouped into *modules*. Each module can have different modes or variants, as well as sub components. Some modules can contain other modules. SMACSS doesn't promote a given naming convention, but it's understood that a naming convention is essential for each project. SassySMACSS does use a very consistent naming convention, which you may or may not choose to use in your modules.
+
+### Modules
+
+SassySMACSS modules are named using underscores, rather than hyphens. This really helps us when we are typing and doing text selection.
+
+#### Module Names:
+
+	// Good:
 	.post_preview
 	.news_story
 	.blog_post
@@ -15,7 +43,33 @@ Modules are named using underscores:
 	.l_footer
 	.l_header
 
-Individual components of modules (that are pieces of that module) are nested inside the module, and use an m_ prefix. This denotes that they are part of the module.
+	// Bad:
+	.post-preview
+	.my-cool-module
+	.dont-do-this
+
+
+Variants for modules DO use hyphens. This enables us to quickly select the variant or the module. For single word modules, we can quickly see that there is a variant, and not a new module.
+
+#### Module Variants:
+
+	// Good:
+	.post_preview-large
+	.post_preview-featured
+	.sprite-sm
+
+	// Not so good (please don't):
+	.post_preview_large
+	.post-preview_featured
+	.sprite_sm
+
+### Module Components and Nested Modules
+
+Oftentimes, the layout of a page will use nested modules. Sometimes, modules will include a couple of modules in their layouts. A great example of this are social media buttons or trend statistics.
+
+Module components (that are pieces of that module) use an m_ prefix, and where possible, a child selector. This denotes that they are part of the module, and limits problems with depth of applicability.
+
+#### Module Component:
 
 	.post_preview
 	{
@@ -25,7 +79,9 @@ Individual components of modules (that are pieces of that module) are nested ins
 		}
 	}
 
-Using this convention helps determine the difference between modules.
+Nested modules use .module, followed by their module name. This prevents name collisions. It also provides required firepower to win any [CSS Specificity Wars](http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html "CSS Specificity Wars").
+
+#### Module Component and Nested Module Together:
 
 	.post_preview
 	{
@@ -39,63 +95,6 @@ Using this convention helps determine the difference between modules.
 
 		}
 	}
-
-It may seem funny to have to use .module.summary, instead of just .summary in the above example. This actually helps us [defeat the dark side](http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html "CSS Specificity Wars") of selector specificity, while maintaining semantics. 
-
-Here's the battle in action, and how SassySMACSS wins:
-
-	//HTML
-
-	<article class="post_preview">
-		<!-- This is not a stand alone module of post_preview, but a part that 
-		it uses. This will prevent collisions with a potential snippet module. -->
-		<span class="m_snippet">
-		...
-		</span>
-
-		<!-- Here, we have an actual summary module, with the -long mode attached. We 
-		use module to denote that this is actually the summary module, not a 
-		component of post_preview -->
-		<div class="module summary summary-long">
-		 ...
-		</div>
-	</article>
-	
-	
-	
-	//SCSS
-	
-	.post_preview
-	{
-		// Post preview is going to include the summary module and change it's styles in order to correctly lay it out on the page.
-
-		.module.summary
-		{
-			// We want to win this specificity war, and force the summary modules to have a 50% width and float to the right.
-
-			width: 50%; float:right;
-		}
-	}
-	
-	// Summary unfortunately picked the location of the battle. It has the
-	upper hand as it's lower in the cascade.
-	.summary
-	{
-		// This attack will be unsuccesful - Normal summaries will have to listen to the 
-		post_preview because of nesting.
-
-		width: 80%; float:left;
-
-		&.summary-long
-		{
-			// Because we've included the .module class inside our HTML and our SCSS, we 
-			also win this specificity battle. If we hadn't have used .module, we would 
-			have lost due to the cascade.
-			width:100%;
-		}
-	}
-
-Following these guidelines helps SassySMACSS be semantic, while winning specifity battles without resorting to *!important;*
 
 
 ## Contributing

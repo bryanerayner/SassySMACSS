@@ -68,17 +68,17 @@ $defaults-float: left !default;
 	{
 		@each $mediaQuery in $mediaQueries
 		{
-			// Check of the media query exists, and it's not smallest. This causes mobile first to happen.
-			@if (get_mediaQuery($mediaQuery) and $mediaQuery != get_mediaQuery_name("smallest"))
+			// Check of the media query exists, and it's the smallest. We want the smallest to be first in the cascade
+			@if ($mediaQuery == get_mediaQuery_name("smallest"))
 			{
-				@media(max-width:get_mediaQuery($mediaQuery))
+				@include grid_cell-mode($i, $columnWidth, $mediaQuery,$useColumnNumber, $cellClassName, $columnClassName);
+			}
+			@if (get_mediaQuery($mediaQuery))
+			{
+				@media(min-width:get_mediaQuery($mediaQuery))
 				{
 					@include grid_cell-mode($i, $columnWidth, $mediaQuery, $useColumnNumber, $cellClassName, $columnClassName);	
 				}				
-			}
-			@else
-			{
-				@include grid_cell-mode($i, $columnWidth, $mediaQuery,$useColumnNumber, $cellClassName, $columnClassName);
 			}
 			
 		}
@@ -101,7 +101,7 @@ $defaults-float: left !default;
 		{
 			float: float_inverse($defaults-float);
 		}
-		> .#{$cellClassName}-last
+		> [class*=#{$cellClassName}][class$="-last"]
 		{
 			float: $defaults-float;
 		}		

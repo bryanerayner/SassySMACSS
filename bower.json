@@ -23,8 +23,8 @@
     "tests"
   ],
   "ignore":[
-    "css/",
-    "*.css",
+    "css/node_modules",
+    "css/tests",
     "node_modules",
     "Gruntfile.js",
     ".DS_Store",
@@ -33,10 +33,15 @@
     "package.json",
     ".sass-cache/",
     "bower.json",
-    "tests/"
+    "tests/",
+    "lib/zepto"
   ],
   "repository":{
     "type":"git",
     "url":"git://github.com/bryanerayner/SassySMACSS.git"
+  },
+  "dependencies":
+  {
+    "zepto":">0.0.0"
   }
 }
